@@ -7,3 +7,23 @@ declare module '*.svg?react' {
   const ReactComponent: FunctionComponent<SVGProps<SVGSVGElement>>;
   export default ReactComponent;
 }
+
+declare module '*.md' {
+  let MDXComponent: () => JSX.Element;
+  export default MDXComponent;
+}
+
+declare module '*.mdx' {
+  import type { ComponentType } from 'react';
+
+  export const frontmatter: {
+    title?: string;
+    date?: string;
+    author?: string;
+    description?: string;
+    tags?: string[];
+  };
+
+  const MDXComponent: ComponentType;
+  export default MDXComponent;
+}
