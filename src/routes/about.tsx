@@ -4,6 +4,9 @@ import { PageSection } from '../layouts/PageSection'
 
 export const Route = createFileRoute('/about')({
   component: RouteComponent,
+  head: () => ({
+    meta: [{ title: "关于 | ffxixslh's Blog" }],
+  }),
 })
 
 function RouteComponent() {

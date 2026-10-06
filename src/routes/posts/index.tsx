@@ -41,6 +41,9 @@ const posts = postsContext
 
 export const Route = createFileRoute('/posts/')({
   component: PostsIndex,
+  head: () => ({
+    meta: [{ title: "文章 | ffxixslh's Blog" }],
+  }),
 })
 
 function PostsIndex() {

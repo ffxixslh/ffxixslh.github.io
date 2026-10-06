@@ -30,6 +30,20 @@ const postPaths = new Set(postsContext.keys())
 
 export const Route = createFileRoute('/posts/$name')({
   component: PostPage,
+  head: ({ params }) => {
+    const path = `./contents/${params.name}.mdx`
+    const post = postPaths.has(path)
+      ? (postsContext(path) as PostModule)
+      : undefined
+
+    return {
+      meta: [
+        {
+          title: `${post?.frontmatter.title ?? params.name} | ffxixslh's Blog`,
+        },
+      ],
+    }
+  },
 })
 
 function PostPage() {

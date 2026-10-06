@@ -2,6 +2,9 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/resume')({
   component: ResumePage,
+  head: () => ({
+    meta: [{ title: "简历 | ffxixslh's Blog" }],
+  }),
 })
 
 function ResumePage() {
