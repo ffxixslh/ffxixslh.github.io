@@ -57,6 +57,18 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               >
                 关于
               </Link>
+              <Link
+                to="/resume"
+                target="_blank"
+                activeOptions={{ exact: true }}
+                className="py-2 text-[#606a63] no-underline transition-colors hover:text-[#a34d39]"
+                activeProps={{
+                  className:
+                    'text-[#a34d39] underline decoration-[#a34d39] underline-offset-8',
+                }}
+              >
+                简历
+              </Link>
             </div>
           </nav>
         </PageContainer>
