@@ -8,6 +8,9 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
 // Docs: https://rsbuild.rs/config/
 export default defineConfig({
+  html: {
+    title: "ffxixslh's Blog",
+  },
   plugins: [
     pluginReact(),
     pluginTailwindcss(),
