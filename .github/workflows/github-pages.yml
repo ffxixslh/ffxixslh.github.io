@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ffxixslh/resume
+          path: resume
       - uses: pnpm/action-setup@v4
         with:
           version: 9
@@ -23,7 +27,13 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
+        working-directory: resume
       - run: pnpm run build
+        working-directory: resume
+      - run: pnpm run build
+      - run: mkdir -p dist/resume
+      - run: cp -R resume/dist/. dist/resume/
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
